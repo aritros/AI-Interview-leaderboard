@@ -1,0 +1,334 @@
+/* Fallback web font — Poppins via Google Fonts (used if local Gilroy .otf files don't load) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ============================================================
+   Octuple Design System — Colors & Type
+   Source: EightfoldAI/octuple (_default-theme.scss, _definitions.scss)
+   Figma: "Octuple DS (Theme 2).fig" — Elements/Typography, Elements/Colors
+   ============================================================ */
+
+/* ---------- Fonts ---------- */
+@font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Thin.otf') format('opentype'); font-weight: 100; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-UltraLight.otf') format('opentype'); font-weight: 200; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Light.otf') format('opentype'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Regular.otf') format('opentype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Medium.otf') format('opentype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-SemiBold.otf') format('opentype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Bold.otf') format('opentype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-ExtraBold.otf') format('opentype'); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Black.otf') format('opentype'); font-weight: 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Gilroy'; src: url('fonts/Gilroy-Heavy.otf') format('opentype'); font-weight: 950; font-style: normal; font-display: swap; }
+
+:root {
+  /* ---------- Brand gradient ---------- */
+  --octuple-gradient: linear-gradient(90deg, #3186c8 0%, #269fca 18%, #1db4cc 38%, #1abbcd 50%, #6fc6aa 100%);
+
+  /* ---------- PRIMARY (Blue) — Eightfold brand blue ---------- */
+  --primary-color-10: #ebf7ff; --primary-color-20: #bce4ff; --primary-color-30: #8ed0fa;
+  --primary-color-40: #68baef; --primary-color-50: #47a4df; --primary-color-60: #2c8cc9;
+  --primary-color-70: #146da6; --primary-color-80: #054d7b; --primary-color-90: #002a47;
+  --primary-color-100: #00060a;
+  --primary-background1-color: var(--primary-color-10);
+  --primary-background2-color: var(--primary-color-20);
+  --primary-background3-color: var(--primary-color-30);
+  --primary-tertiary-color:    var(--primary-color-60); /* graphics */
+  --primary-secondary-color:   var(--primary-color-70); /* text on light */
+  --primary-color:             var(--primary-color-80); /* extra high contrast */
+
+  /* ---------- ACCENT (Blue-Green) ---------- */
+  --accent-color-10: #ebfdff; --accent-color-20: #b0f3fe; --accent-color-30: #7be4f4;
+  --accent-color-40: #50cee1; --accent-color-50: #2db3c7; --accent-color-60: #1999ac;
+  --accent-color-70: #0b7b8b; --accent-color-80: #025966; --accent-color-90: #00333b;
+  --accent-color-100: #00090a;
+  --accent-color: var(--accent-color-80);
+
+  /* ---------- GREY (Neutral) ---------- */
+  --grey-color-10: #f6f7f8; --grey-color-20: #d9dce1; --grey-color-30: #bdc1c9;
+  --grey-color-40: #a1a6b1; --grey-color-50: #858b98; --grey-color-60: #69717f;
+  --grey-color-70: #4f5666; --grey-color-80: #343c4c; --grey-color-90: #1a212e;
+  --grey-color-100: #05070a;
+  --grey-background1-color: var(--grey-color-10);
+  --grey-background2-color: var(--grey-color-20);
+  --grey-tertiary-color:    var(--grey-color-60);
+  --grey-secondary-color:   var(--grey-color-70);
+  --grey-color:             var(--grey-color-80);
+
+  /* ---------- EXTENDED SCALES (10 steps each) ---------- */
+  --red-color-10: #ffefef; --red-color-20: #ffc6c6; --red-color-30: #ffa3a3;
+  --red-color-40: #f48686; --red-color-50: #e46f6f; --red-color-60: #c15151;
+  --red-color-70: #993838; --red-color-80: #6c2222; --red-color-90: #3b1010; --red-color-100: #0a0202;
+
+  --redorange-color-10: #fff2ed; --redorange-color-20: #ffd1bd; --redorange-color-30: #ffb396;
+  --redorange-color-40: #ff9977; --redorange-color-50: #f8845f; --redorange-color-60: #d26743;
+  --redorange-color-70: #a54d2c; --redorange-color-80: #78351a; --redorange-color-90: #4c1f0c; --redorange-color-100: #1f0c03;
+
+  --orange-color-10: #fff8eb; --orange-color-20: #ffe3b0; --orange-color-30: #ffcd78;
+  --orange-color-40: #ffb650; --orange-color-50: #f29d31; --orange-color-60: #c97e19;
+  --orange-color-70: #9d6309; --orange-color-80: #6c4500; --orange-color-90: #3b2600; --orange-color-100: #0a0700;
+
+  --yellow-color-10: #ffffeb; --yellow-color-20: #fff89c; --yellow-color-30: #ffe44e;
+  --yellow-color-40: #f1c40f; --yellow-color-50: #d6ad00; --yellow-color-60: #a88f00;
+  --yellow-color-70: #857600; --yellow-color-80: #5c5500; --yellow-color-90: #333100; --yellow-color-100: #0a0a00;
+
+  --yellowgreen-color-10: #fdfeeb; --yellowgreen-color-20: #f3f5b0; --yellowgreen-color-30: #e2e575;
+  --yellowgreen-color-40: #cacd46; --yellowgreen-color-50: #abae1f; --yellowgreen-color-60: #858707;
+  --yellowgreen-color-70: #6d6f00; --yellowgreen-color-80: #525400; --yellowgreen-color-90: #343500; --yellowgreen-color-100: #131300;
+
+  --green-color-10: #f0fefa; --green-color-20: #b9f4e4; --green-color-30: #8ce1ca;
+  --green-color-40: #67c5ac; --green-color-50: #51ab93; --green-color-60: #3d8f79;
+  --green-color-70: #2b715f; --green-color-80: #1b5143; --green-color-90: #0e2e26; --green-color-100: #030a08;
+
+  --bluegreen-color-10: #ebfdff; --bluegreen-color-20: #b0f3fe; --bluegreen-color-30: #7be4f4;
+  --bluegreen-color-40: #50cee1; --bluegreen-color-50: #2db3c7; --bluegreen-color-60: #1999ac;
+  --bluegreen-color-70: #0b7b8b; --bluegreen-color-80: #025966; --bluegreen-color-90: #00333b; --bluegreen-color-100: #00090a;
+
+  --blueviolet-color-10: #f1f2ff; --blueviolet-color-20: #cacffc; --blueviolet-color-30: #a9b0f5;
+  --blueviolet-color-40: #8c95e8; --blueviolet-color-50: #757ed6; --blueviolet-color-60: #5962b7;
+  --blueviolet-color-70: #414996; --blueviolet-color-80: #2b3271; --blueviolet-color-90: #191d4a; --blueviolet-color-100: #090b1f;
+
+  --violet-color-10: #fbf6fb; --violet-color-20: #ead3e8; --violet-color-30: #dab4d6;
+  --violet-color-40: #c491bf; --violet-color-50: #ae72a8; --violet-color-60: #975590;
+  --violet-color-70: #7e3a77; --violet-color-80: #5d2156; --violet-color-90: #350e31; --violet-color-100: #060106;
+
+  --violetred-color-10: #fff0f9; --violetred-color-20: #fcc8e7; --violetred-color-30: #f3a5d4;
+  --violetred-color-40: #e688c0; --violetred-color-50: #d36fab; --violetred-color-60: #b5548e;
+  --violetred-color-70: #943d71; --violetred-color-80: #702853; --violetred-color-90: #491635; --violetred-color-100: #1f0816;
+
+  /* ---------- SEMANTIC (Validation) ---------- */
+  --success-color: #2b715f; --success-background-color: #f0fefa; --success-border-color: #3d8f79;
+  --warning-color: #9d6309; --warning-background-color: #fff8eb; --warning-border-color: #c97e19;
+  --error-color:   #993838; --error-background-color:   #ffefef; --error-border-color:   #c15151;
+
+  /* ---------- SURFACES / TEXT ---------- */
+  --background-color:     #ffffff;
+  --border-color:         #bec2ca;
+  --text-primary-color:   #1a212e; /* grey-90 */
+  --text-secondary-color: #4f5666; /* grey-70 */
+  --text-tertiary-color:  #69717f; /* grey-60 */
+  --text-inverse-color:   #ffffff;
+  --info-color:           #4f5666;
+  --white-color:          #ffffff;
+  --black-color:          #000000;
+  --horizontal-rule-color: var(--grey-color-40);
+
+  /* ---------- ANCHOR / LINK ---------- */
+  --anchor-color:         var(--primary-secondary-color);
+  --anchor-hover-color:   var(--primary-color-90);
+  --anchor-visited-color: var(--violet-color-70);
+
+  /* ---------- FONTS ---------- */
+  --font-family:        'Poppins', 'Gilroy';
+  --font-family-display:'Poppins', 'Gilroy'; /* display / cover headline / brand moments */
+  --font-stack:         'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --font-stack-full:    var(--font-family), var(--font-stack);
+  --font-stack-display: var(--font-family-display), var(--font-stack);
+  --font-size:          16px;
+
+  /* ---------- TYPE SCALE (from _definitions.scss) ---------- */
+  --text-font-size-1:  12px;  /* Caption */
+  --text-font-size-2:  14px;  /* Body 3 / Button 3 */
+  --text-font-size-3:  16px;  /* Body 2 / Button 2 */
+  --text-font-size-4:  18px;  /* Body 1 (Mobile L) */
+  --text-font-size-5:  20px;  /* Button 1 / Subtitle 2 */
+  --text-font-size-6:  24px;  /* Subtitle 1 */
+  --text-font-size-7:  32px;  /* Header 4 */
+  --text-font-size-8:  40px;  /* Header 3 */
+  --text-font-size-9:  56px;  /* Header 2 */
+  --text-font-size-10: 64px;  /* Header 1 */
+  --text-font-size-11: 80px;  /* Display 2 */
+  --text-font-size-12: 96px;  /* Display 1 */
+
+  --text-line-height-1:  16px;
+  --text-line-height-2:  20px;
+  --text-line-height-3:  24px;
+  --text-line-height-4:  28px;
+  --text-line-height-5:  32px;
+  --text-line-height-6:  40px;
+  --text-line-height-7:  48px;
+  --text-line-height-8:  64px;
+  --text-line-height-9:  72px;
+  --text-line-height-10: 96px;
+  --text-line-height-11: 112px;
+  --text-line-height-12: 120px;
+
+  --text-letter-spacing-xs: -0.16px;
+  --text-letter-spacing-s:  -0.24px;
+  --text-letter-spacing-m:  -0.32px;
+  --text-letter-spacing-l:  -0.48px;
+
+  --text-font-weight-extra-light: 200;
+  --text-font-weight-light:       300;
+  --text-font-weight-regular:     400;
+  --text-font-weight-semibold:    600;
+  --text-font-weight-bold:        700;
+  --text-font-weight-black:       900;
+
+  /* ---------- SPACING (8pt base, plus half-steps) ---------- */
+  --space-xxxs: 2px;
+  --space-xxs:  4px;
+  --space-xs:   8px;
+  --space-s:    12px;
+  --space-m:    16px;
+  --space-ml:   20px;
+  --space-l:    24px;
+  --space-xl:   32px;
+  --space-xxl:  40px;
+  --space-xxxl: 64px;
+
+  /* ---------- BORDER RADIUS ---------- */
+  --border-radius-xs: 2px;
+  --border-radius-s:  4px;
+  --border-radius-m:  8px;
+  --border-radius-l:  16px;
+  --border-radius-xl: 24px;
+  --border-radius-round: 50%;
+
+  /* ---------- SHADOWS (elevation / shadow-object tokens) ---------- */
+  --shadow-object-xs: 0px 1px 2px rgba(15,20,31,0.12);
+  --shadow-object-s:  0px 1px 2px rgba(15,20,31,0.12), 0px 1px 4px rgba(15,20,31,0.16);
+  --shadow-object-m:  0px 1px 2px rgba(15,20,31,0.12), 0px 2px 8px rgba(15,20,31,0.16);
+  --shadow-object-l:  0px 1px 2px rgba(15,20,31,0.12), 0px 4px 16px rgba(15,20,31,0.16);
+  --shadow-object-xl: 0px 1px 2px rgba(15,20,31,0.12), 0px 8px 32px rgba(15,20,31,0.16);
+  --shadow-panel-right:  -1px 0px 2px rgba(15,20,31,0.12), -8px 0px 32px rgba(15,20,31,0.16);
+  --shadow-panel-behind: 0px -4px 16px rgba(0,0,0,0.12);
+
+  /* ---------- MOTION ---------- */
+  --motion-duration-extra-fast: 200ms;
+  --motion-duration-fast:       400ms;
+  --motion-duration-normal:     600ms;
+  --motion-duration-slow:       800ms;
+  --motion-duration-extra-slow: 1000ms;
+
+  --motion-easing-easeout:   cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-easein:    cubic-bezier(0.42, 0, 1, 1);
+  --motion-easing-easeinout: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-ease-in-back:     cubic-bezier(0.12, 0.4, 0.29, 1.46);
+  --motion-ease-out-back:    cubic-bezier(0.71, -0.46, 0.88, 0.6);
+
+  /* ---------- BREAKPOINTS ---------- */
+  --xlarge-screen-size: 1600px;
+  --large-screen-size:  1200px;
+  --medium-screen-size: 900px;
+  --small-screen-size:  600px;
+
+  /* ---------- FOCUS ---------- */
+  --focus-visible-color:    var(--blueviolet-color-50);
+  --focus-visible-outline:  2px solid var(--focus-visible-color);
+
+  /* ---------- ICON TOKENS (MDI / Font Awesome) ---------- */
+  --icon-font-size-material-xs: 14px;
+  --icon-font-size-material-s:  16px;
+  --icon-font-size-material-m:  20px;
+  --icon-font-size-material-l:  24px;
+}
+
+/* ============================================================
+   SEMANTIC TYPE CLASSES
+   Names map to Octuple's Figma typography component names.
+   Body/UI uses Source Sans Pro. Display/brand moments use Gilroy.
+   ============================================================ */
+
+html, body {
+  font-family: var(--font-stack-full);
+  font-size: var(--font-size);
+  color: var(--text-primary-color);
+  background: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.octuple-display-1, .o-d1 {
+  font-family: var(--font-stack-display);
+  font-weight: 300;
+  font-size: var(--text-font-size-12);
+  line-height: var(--text-line-height-11);
+  letter-spacing: -0.03em;
+  color: var(--text-primary-color);
+}
+.octuple-display-2, .o-d2 {
+  font-family: var(--font-stack-display);
+  font-weight: 300;
+  font-size: var(--text-font-size-11);
+  line-height: var(--text-line-height-10);
+  letter-spacing: -0.03em;
+}
+.octuple-display-3, .o-d3 {
+  font-family: var(--font-stack-full);
+  font-weight: 600;
+  font-size: var(--text-font-size-10);
+  line-height: var(--text-line-height-9);
+  letter-spacing: -0.02em;
+}
+.octuple-display-4, .o-d4 {
+  font-family: var(--font-stack-full);
+  font-weight: 600;
+  font-size: var(--text-font-size-9);
+  line-height: var(--text-line-height-8);
+  letter-spacing: -0.02em;
+}
+
+.octuple-h1, .o-h1 {
+  font-family: var(--font-stack-full);
+  font-weight: 600;
+  font-size: var(--text-font-size-8);
+  line-height: var(--text-line-height-7);
+  letter-spacing: -0.02em;
+  color: var(--text-primary-color);
+}
+.octuple-h2, .o-h2 {
+  font-family: var(--font-stack-full);
+  font-weight: 600;
+  font-size: var(--text-font-size-7);
+  line-height: var(--text-line-height-6);
+  letter-spacing: -0.015em;
+  color: var(--text-primary-color);
+}
+.octuple-h3, .o-h3 {
+  font-family: var(--font-stack-full);
+  font-weight: 600;
+  font-size: var(--text-font-size-6);
+  line-height: var(--text-line-height-5);
+  letter-spacing: -0.01em;
+  color: var(--text-primary-color);
+}
+.octuple-h4, .o-h4 {
+  font-family: var(--font-stack-full);
+  font-weight: 600;
+  font-size: var(--text-font-size-5);
+  line-height: var(--text-line-height-4);
+  color: var(--text-primary-color);
+}
+.octuple-subtitle-1, .o-sub1 {
+  font-family: var(--font-stack-full);
+  font-weight: 400;
+  font-size: var(--text-font-size-6);
+  line-height: var(--text-line-height-5);
+}
+.octuple-subtitle-2, .o-sub2 {
+  font-family: var(--font-stack-full);
+  font-weight: 600;
+  font-size: var(--text-font-size-5);
+  line-height: var(--text-line-height-3);
+}
+
+/* Body */
+.octuple-body-1, .o-body1 { font-size: var(--text-font-size-4); line-height: var(--text-line-height-3); font-weight: 400; }
+.octuple-body-2, .o-body2 { font-size: var(--text-font-size-3); line-height: var(--text-line-height-3); font-weight: 400; }
+.octuple-body-3, .o-body3 { font-size: var(--text-font-size-2); line-height: var(--text-line-height-2); font-weight: 400; }
+.octuple-caption, .o-caption { font-size: var(--text-font-size-1); line-height: var(--text-line-height-1); font-weight: 400; color: var(--text-secondary-color); }
+
+/* Buttons */
+.octuple-button-1 { font-family: var(--font-stack-full); font-weight: 600; font-size: 20px; line-height: 24px; }
+.octuple-button-2 { font-family: var(--font-stack-full); font-weight: 600; font-size: 16px; line-height: 20px; }
+.octuple-button-3 { font-family: var(--font-stack-full); font-weight: 600; font-size: 14px; line-height: 16px; }
+
+/* Raw element defaults — tie HTML tags to Octuple steps */
+h1 { font-family: var(--font-stack-full); font-weight: 600; font-size: var(--text-font-size-8); line-height: var(--text-line-height-7); letter-spacing: -0.02em; color: var(--text-primary-color); margin: 0; }
+h2 { font-family: var(--font-stack-full); font-weight: 600; font-size: var(--text-font-size-7); line-height: var(--text-line-height-6); letter-spacing: -0.015em; color: var(--text-primary-color); margin: 0; }
+h3 { font-family: var(--font-stack-full); font-weight: 600; font-size: var(--text-font-size-6); line-height: var(--text-line-height-5); letter-spacing: -0.01em; color: var(--text-primary-color); margin: 0; }
+h4 { font-family: var(--font-stack-full); font-weight: 600; font-size: var(--text-font-size-5); line-height: var(--text-line-height-4); color: var(--text-primary-color); margin: 0; }
+
+/* Link */
+a { color: var(--anchor-color); text-decoration: none; transition: color var(--motion-duration-extra-fast) var(--motion-easing-easeinout); }
+a:hover { color: var(--anchor-hover-color); text-decoration: underline; }
+a:visited { color: var(--anchor-visited-color); }
